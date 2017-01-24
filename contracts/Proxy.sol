@@ -11,7 +11,7 @@ contract Proxy is Owned {
         bytes data
     );
     function () payable{}
-    function forward(address destination, uint value, bytes data) onlyOwner {
+    function forward(address destination, uint value, bytes data) onlyOwner payable {
     	// If a contract tries to CALL or CREATE a contract with either
     	// (i) insufficient balance, or (ii) stack depth already at maximum (1024),
     	// the sub-execution and transfer do not occur at all, no gas gets consumed, and 0 is added to the stack.
